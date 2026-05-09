@@ -66,7 +66,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-5 py-2 rounded-xl bg-green-500 hover:bg-green-600 font-semibold transition"
             >
-              Cotizar: Yasser Cortez
+              Cotizar: Bertha Jarquin
             </a>
 
             <a
@@ -75,7 +75,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold transition"
             >
-              Cotizar: Bertha Ivania
+              Cotizar: Yasser Cortez
             </a>
 
           </div>
@@ -206,6 +206,76 @@ export default function Home() {
           </div>
 
         </div>
+
+      </section>
+
+      <section className="w-full object-cover rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition">
+            
+
+              <h2 className="text-4xl font-bold text-center mb-12">
+      Conoce Más de Nosotros
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      <motion.img
+        src="/banner_25_aniv.jpeg" // Banner 25 aniv
+        alt="25 Aniversario"
+        className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-[320px] sm:h-[360px] md:h-[400px] object-cover mx-auto rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      />
+
+      <motion.img
+        src="/banner_met_pag.jpeg" // Banner metodos pagos
+        alt="Métodos de pago"
+        className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-[320px] sm:h-[360px] md:h-[400px] object-cover mx-auto rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      />
+
+      <motion.img
+        src="/banner_procesos.jpeg" // Banner Nuestro proceso
+        alt="Nuestro proceso"
+        className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-[320px] sm:h-[360px] md:h-[400px] object-cover mx-auto rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      />
+
+            </div>
+      </section>
+
+      <section className="w-full object-cover rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition">
+      
+
+            <h2 className="text-4xl font-bold text-center mb-12">
+      Nuestro Trabajo
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8">
+
+      <motion.img
+        src="/banner_sellos.jpeg" // Banner sellos personalizados
+        alt="Sellos personalizados"
+        className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-[320px] sm:h-[360px] md:h-[400px] object-cover mx-auto rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      />
+
+      <motion.img
+        src="/banner_servicios.jpeg" // Banner servicios
+        alt="Nuestros servicios"
+        className="w-full max-w-[220px] sm:max-w-[260px] md:max-w-[280px] h-[320px] sm:h-[360px] md:h-[400px] object-cover mx-auto rounded-3xl shadow-2xl border border-white/10 hover:scale-105 transition"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+      />
+
+      </div>
 
       </section>
 
