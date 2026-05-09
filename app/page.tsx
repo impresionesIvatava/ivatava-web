@@ -1,171 +1,219 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  MapPin,
+  MessageSquare,
+  Printer,
+  FileText,
+  CreditCard,
+  BookOpen,
+  Sticker,
+  Image,
+  PenTool,
+  Package,
+} from "lucide-react";
+
 export default function Home() {
   const servicios = [
-    "Impresión Offset",
-    "Impresión Digital",
-    "Facturas y Recibos",
-    "Tarjetas de Presentación",
-    "Brochures y Catálogos",
-    "Stickers y Etiquetas",
-    "Banners y Lonas",
-    "Sellos Personalizados",
-    "Encuadernados y Empastados",
-    "Papelería Corporativa",
+    { titulo: "Impresión Offset", descripcion: "Grandes volúmenes con calidad profesional.", icon: Printer },
+    { titulo: "Impresión Digital", descripcion: "Rápido, nítido y personalizado.", icon: Printer },
+    { titulo: "Facturas y Recibos", descripcion: "Documentos empresariales formales.", icon: FileText },
+    { titulo: "Tarjetas de Presentación", descripcion: "Imagen profesional para tu negocio.", icon: CreditCard },
+    { titulo: "Brochures y Catálogos", descripcion: "Publicidad visual de alto impacto.", icon: BookOpen },
+    { titulo: "Stickers y Etiquetas", descripcion: "Personalización de productos.", icon: Sticker },
+    { titulo: "Banners y Lonas", descripcion: "Publicidad de gran formato.", icon: Image },
+    { titulo: "Sellos Personalizados", descripcion: "Uso empresarial profesional.", icon: PenTool },
+    { titulo: "Encuadernados", descripcion: "Acabados elegantes y duraderos.", icon: Package },
+    { titulo: "Papelería Corporativa", descripcion: "Identidad visual completa.", icon: Package },
   ];
 
-  const whatsappLink =
-    "https://wa.me/50558419143?text=Hola%20quiero%20una%20cotización";
-
   return (
-    <main className="min-h-screen bg-white text-gray-800">
+    <main className="relative min-h-screen text-white overflow-hidden">
+
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[url('/fondo.png')] bg-cover bg-center" />
+      <div className="absolute inset-0 bg-black/75" />
+
+      {/* WHATSAPP FLOTANTE */}
+      <a
+        href="https://wa.me/50588842775?text=Hola%20quiero%20cotizar"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600
+        p-4 rounded-full shadow-2xl hover:scale-110 transition animate-bounce"
+      >
+        <MessageSquare size={22} />
+      </a>
+
       {/* HEADER */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="bg-white rounded-2xl p-2 shadow-sm">
-            <img
-              src="/logo-ivatava.png"
-              alt="Logo Ivatava"
-              className="w-64 object-contain"
-            />
+      <header className="relative z-10 backdrop-blur-xl bg-white/5 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+
+          <div className="flex items-center">
+  <img
+    src="/logo-ivatava.png"
+    className="w-80 md:w-96 lg:w-[420px] drop-shadow-2xl transition hover:scale-105"
+    alt="Logo Ivatava"
+  />
+</div>
+
+          <div className="flex gap-3">
+
+            <a
+              href="https://wa.me/50588842775?text=Hola%20quiero%20cotizar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-xl bg-green-500 hover:bg-green-600 font-semibold transition"
+            >
+              Cotizar: Yasser Cortez
+            </a>
+
+            <a
+              href="https://wa.me/50587468384?text=Hola%20quiero%20información"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold transition"
+            >
+              Cotizar: Bertha Ivania
+            </a>
+
           </div>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-2xl font-semibold transition"
-          >
-            WhatsApp
-          </a>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h1 className="text-5xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-pink-600 to-yellow-400 bg-clip-text text-transparent">
+      <section className="relative z-10 max-w-6xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-14 items-center">
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+
+          <h1
+            className="text-5xl md:text-6xl font-extrabold leading-tight mb-6"
+            style={{
+              WebkitTextStroke: "1.5px black",
+              textShadow: "0 10px 40px rgba(0,0,0,0.8)",
+            }}
+          >
             Impresión Profesional y Soluciones Creativas
           </h1>
 
-          <p className="text-lg text-gray-600 mb-8">
-            Ofrecemos soluciones modernas de impresión, diseño y papelería
-            corporativa para negocios, estudiantes y emprendedores.
+          <p className="text-white/90 bg-white/10 p-5 rounded-2xl backdrop-blur-xl mb-8 border border-white/10">
+            Transformamos tus ideas en materiales impresos de alto impacto para negocios modernos.
           </p>
 
           <div className="flex flex-wrap gap-4">
+
             <a
-              href={whatsappLink}
+              href="https://wa.me/50588842775?text=Hola%20quiero%20cotizar"
               target="_blank"
-              className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-2xl font-semibold transition"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-7 py-4 rounded-2xl
+              bg-gradient-to-r from-green-500 to-emerald-600
+              font-bold hover:scale-105 transition shadow-lg"
             >
-              Cotizar Ahora
+              <MessageSquare size={20} />
+              Cotizar por WhatsApp
             </a>
 
             <a
               href="#servicios"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-2xl font-semibold transition"
+              className="px-7 py-4 rounded-2xl border border-white/30 hover:bg-white/10 transition"
             >
               Ver Servicios
             </a>
-          </div>
-        </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8">
-          <div className="aspect-video rounded-2xl bg-gray-100 flex items-center justify-center text-center p-6">
-            <p className="text-gray-500 text-lg">
-              Calidad • Diseño • Impresión • Publicidad
-            </p>
           </div>
-        </div>
+
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="bg-white/10 border border-white/10 rounded-3xl p-10 backdrop-blur-2xl shadow-2xl"
+        >
+          <p className="text-center text-xl font-semibold">
+            Calidad • Diseño • Impresión • Branding
+          </p>
+        </motion.div>
+
       </section>
 
       {/* SERVICIOS */}
-      <section id="servicios" className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-bold mb-4">
-              Nuestros Servicios
-            </h2>
+      <section id="servicios" className="relative z-10 py-20">
 
-            <p className="text-gray-600">
-              Atención rápida, calidad profesional y soluciones visuales para
-              todo tipo de negocio.
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto px-6">
+
+          <h2 className="text-4xl font-bold text-center mb-14">
+            Nuestros Servicios
+          </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicios.map((servicio, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition"
-              >
-                <h3 className="text-xl font-semibold mb-3 text-pink-600">
-                  {servicio}
-                </h3>
 
-                <p className="text-gray-600">
-                  Acabados profesionales y excelente atención personalizada.
-                </p>
-              </div>
-            ))}
+            {servicios.map((s, i) => {
+              const Icon = s.icon;
+
+              return (
+                <div
+                  key={i}
+                  className="bg-white/10 border border-white/10 p-6 rounded-3xl
+                  backdrop-blur-xl hover:scale-105 transition shadow-lg"
+                >
+                  <div className="flex items-center gap-2 mb-2 text-green-400">
+                    <Icon size={20} />
+                    <h3 className="text-lg font-bold">{s.titulo}</h3>
+                  </div>
+
+                  <p className="text-white/80">{s.descripcion}</p>
+                </div>
+              );
+            })}
+
           </div>
+
         </div>
+
       </section>
 
       {/* CONTACTO */}
-      <section className="py-12 bg-white border-y">
+      <section className="relative z-10 py-16">
+
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
-            <h3 className="text-2xl font-bold mb-4 text-pink-600">
-              Dirección
+
+          <div className="bg-white/10 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
+            <h3 className="text-2xl font-bold mb-2 flex items-center gap-2">
+              <MapPin size={22} /> Dirección
             </h3>
 
-            <p className="text-lg text-gray-700">
-              Rotonda Hugo Chávez, 250 mts. arriba
+            <p className="text-white/80">
+              Rotonda Hugo Chávez, 250 mts arriba
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-3xl p-8 shadow-sm">
-            <h3 className="text-2xl font-bold mb-4 text-blue-700">
-              WhatsApp
+          <div className="bg-white/10 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
+            <h3 className="text-2xl font-bold mb-2">
+              📲 WhatsApp
             </h3>
 
-            <p className="text-lg text-gray-700 leading-8">
-              5841-9143 <br />
-              7763-0289 <br />
-              8884-2775 <br />
-              8746-8384
+            <p className="text-white/80">
+              8884-2775 / 8746-8384
             </p>
           </div>
+
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-pink-600 to-blue-600 text-white rounded-3xl p-10 text-center shadow-2xl">
-            <h2 className="text-4xl font-bold mb-4">
-              ¡Cotiza Ahora por WhatsApp!
-            </h2>
-
-            <p className="text-gray-100 mb-8">
-              Envíanos tu idea, diseño o requerimiento y te responderemos
-              rápidamente.
-            </p>
-
-            <a
-              href={whatsappLink}
-              target="_blank"
-              className="bg-white text-pink-600 hover:bg-gray-100 px-8 py-4 rounded-2xl text-lg font-bold inline-block transition"
-            >
-              Cotizar Ahora
-            </a>
-          </div>
-        </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white py-6 text-center text-gray-500 border-t">
-        © 2026 Impresiones & Librería Ivatava, S.A.
+      <footer className="relative z-10 text-center py-10 text-white/50 border-t border-white/10">
+        © 2026 Impresiones & Librería Ivatava, S.A. By Octavio Cortez | Todos los derechos reservados.
       </footer>
+
     </main>
   );
 }
