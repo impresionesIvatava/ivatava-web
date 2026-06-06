@@ -1,0 +1,11 @@
+# Dependencias de Node (no se suben porque pesan demasiado)
+node_modules/
+
+# Variables de entorno (¡Super importante! Aquí está tu PORT y claves futuras)
+.env
+
+# Sesión guardada de WhatsApp (¡CRUCIAL! Si subís esto, cualquiera podría usar tu WhatsApp)
+.wwebjs_auth/
+
+# Caché del navegador de WhatsApp (Archivos basura de carga rápida y cookies)
+.wwebjs_cache/
